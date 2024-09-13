@@ -10,15 +10,18 @@ if (lenstr ==0):
     print('Name cannot be blank')
 
 else:
-    if len(name) < 3:
-        print('Name too short')
-       
+    if name.isspace():
+        print('Name cannot be blank')
     else:
-        if name.isalpha():
-            print('Valid')
+        if len(name) < 3:
+            print('Name too short')
+       
         else:
-            print('Name must be alphabetic')
-
+            if name.isalpha():
+                print('Valid')
+            else:
+                print('Name must be alphabetic')
+                    
 accountnumber = input('Enter Account Number: ')
 
 #Cannot be blank -              Message: Account number cannot be blank *
@@ -31,35 +34,35 @@ if (lenstr == 0):
     print('Account Number cannot be blank')
 
 else:
-    if len(accountnumber) != 9:
-        print('Account Number must be 9 Digits')     
+    if accountnumber.isspace():
+        print('Name cannot be blank')
+
+#switch isnumeric and ! = 9
+        
     else:
-        if accountnumber.isnumeric():
-            print('Valid')
+        if len(accountnumber) != 9:
+            print('Account Number must be 9 Digits')     
         else:
-            print('Account must be Numeric')
+            if accountnumber.isnumeric():
+                print('Valid')
+            else:
+                print('Account must be Numeric')
 
 paymentamount = input('Enter Payment Amount: ')
 
-#Cannot be blank -              Message: Payment cannot be blank *
-#Cannot be negative -           Message: Payment cannot be negative
-#Cannot be zero -               Message: Payment cannot be zero *
-
-lenamt = len(paymentamount)
-
-if (lenamt == 0):
-    print('Payment Amount can not be blank')
-
+if len(paymentamount) == 0:
+    print('Payment Amount cannot be blank')
 else:
-    if paymentamount.isnumeric():
-        print('Valid')
-    else:
+    if paymentamount.isspace():
+        print('Payment Amount cannot be blank')
+    else:      
+   
         amt = float(paymentamount)
         if amt == 0:
             print('Payment Amount cannot be zero')
         else:
             if amt < 0:
                 print('Payment Amount cannot be negative')
-
             else:
                 print('Valid')
+
