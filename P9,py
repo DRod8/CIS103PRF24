@@ -1,0 +1,37 @@
+def miles_to_kilometers():
+    try:
+        miles = float(input('Enter Miles: '))
+        kilometers = miles * 1.609344
+        print('Kilometers is:', kilometers)
+    except:
+        print('Miles have to be a number')
+        
+def fahrenheit_to_celsius():
+    try:
+        fahrenheit = float(input('Enter Fahrenheit: '))
+        celsius = (fahrenheit-32) * 5/9
+        print('Celsius is: ',celsius)
+    except:
+        print('Unknown')
+
+def pounds_to_kilograms():
+    try:
+        pounds = float(input('Enter Pounds: '))
+        kilograms = pounds * 0.45659237  
+        print('Kilogram is: ',kilograms)
+    except:
+        print('Unknown')
+        
+def main():
+    answer='y'
+
+    while(answer=='y')or(answer=='Y'):
+        miles_to_kilometers()
+        fahrenheit_to_celsius()
+        pounds_to_kilograms()
+        answer=input('Again y/n->')
+
+
+    return
+main()
+
