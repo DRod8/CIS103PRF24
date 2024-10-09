@@ -3,7 +3,7 @@ def main():
 
     thetext = '''
 
-Python was conceived in the late 1980’s by Netherlands programmer
+    Python was conceived in the late 1980’s by Netherlands programmer
 Guido Van Rossum and rolled out in 1991. Developing the language
 was a hobby project for Van Rossum to keep him occupied over
 Christmas, though he soon began implementing the language at
@@ -18,26 +18,27 @@ and Instagram are among some of the titans that rely on this
 language to support both front-end and back-end functionality.
 
 '''
+
     print(thetext)
 
     lentext = len(thetext)
-    print(lentext)
+    print('The length of the text is: ',lentext)
 
-    paragraph = thetext.strip()
-    print(len(paragraph))
+    thetext2 = thetext.strip()
+    print('Length after is: ', len(thetext2))
 
     countthe = thetext.count('the')
-    print("THE was found",countthe, "TIMES!")
+    print("'THE' was found",countthe, "TIMES!")
 
     findlittle = thetext.find('little')
-    if thetext in paragraph:
+    if thetext in thetext2:
         print('LITTLE was found',findlittle)
 
     else:
         print('LITTLE NOT found')
 
         findtitan = thetext.find('titan')
-        if thetext in paragraph:
+        if thetext in thetext2:
             print('TITAN Found')
 
         else:
@@ -45,23 +46,10 @@ language to support both front-end and back-end functionality.
 
             appli = 'appl'
             findappl = thetext.find(appli)
-            print('Position of APPL is ->', findappl)
-
-#numb2 = thetext.find(findappl)
-#print(' Position of APPL is -> ',numb2)
-#str02 = str01.replace('is','was')
-#print('new sentence is -> ',str02)
-
-    print(paragraph)
-
-# ---------------------------------
-
-# COUNT the word "the"
-
-# Print the number of "the" FOUND
-
-# ---------------------------------
-
+            print('Position of APPL is: ', findappl)
+     
+    thetext2=thetext2.replace('Python','PYTHON')
+    print(thetext2)
 
     return
 main()
