@@ -13,7 +13,7 @@ def main():
     
     while inputNum > 0:
         if inputNum in roNum:
-            outNum=rn[inputNum]
+            outNum=roNum[inputNum]
             print(inputNum, 'Roman Number is: ', outNum)
         
         else:
@@ -28,7 +28,7 @@ def main():
                 print('-----------------')
             
             #print(romanNumerals [inputNum]) 
-        inputNum = int(input("Enter a negative number to exit): "))
+        inputNum = int(input("Enter another number: "))
             #print("Roman numeral must be ALPHABETIC")
 
     print("Roman Numerics Dictionary")
