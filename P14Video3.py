@@ -1,9 +1,5 @@
 https://www.youtube.com/watch?v=rq8cL2XMM5M
 
-
-class Employee:
-    
-   
 class Employee:
     
     num_of_emps = 0
