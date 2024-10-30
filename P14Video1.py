@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=ZDa-Z5JzLYM
+
 class Employee:
     
     def __init__(self, first, last, pay):
