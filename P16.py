@@ -1,5 +1,5 @@
 def fact(n):
-    print(n)
+    print(' ',n,end='')
     if n == 1:
         return n
     else:
@@ -20,7 +20,7 @@ def main():
                 print("Input Cannot be Negative")
                 
             a = fact(numb)
-            print(numb, ' factorial is -> ',a)
+            print(numb, ' Sum is -> ',a)
         
         except:
             print("Input must be a Number")
