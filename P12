@@ -1,9 +1,11 @@
 print('Rainfall for Chicago 2017')
 
+months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+number = [0]*12
+
 for x in range (0,12):
-        number= [0]*12
-        print(x)
-        number[x]= float(input('Enter Rainfall: '))
+    print(months[x])
+    number[x]= float(input('Enter Rainfall: '))
 
 len01=len(number)
 print(number)
