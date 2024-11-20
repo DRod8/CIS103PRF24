@@ -2,24 +2,25 @@ import datetime
 
 def Points_to_Grades (fpoints):
     Grade=  'X'
-    if (fpoints>=900) and (fpoints<1000):
+    if (fpoints>=900) and (fpoints<=1000):
         Grades= "A"
         print('Grade is: ', Grades)
     else:
-        if (fpoints>=800) and (fpoints<899):
+        if (fpoints>=800) and (fpoints<=899):
             Grades="B"
             print('Grade is: ', Grades)
         else:
-            if (fpoints>=700) and (fpoints<799):
+            if (fpoints>=700) and (fpoints<=799):
                 Grades="C"
                 print('Grade is: ', Grades)
             else:
-                if (fpoints>=600) and (fpoints<699):
+                if (fpoints>=600) and (fpoints<=699):
                     Grades="D"
                     print('Grade is: ', Grades)
                 else:
-                    Grades="F"
-                    print('Grade is: ', Grades)
+                    if (fpoints>0) and (fpoints<=599):
+                        Grades="F"
+                        print('Grade is: ', Grades)
 
     return Grades
 
@@ -40,8 +41,6 @@ def main():
     Dcount=0
     Fcount=0
     
-    
-  
     infile = open(filenamein, 'r')
     out1 = open(filenameout1, 'w')
     out2 = open(filenameout2, 'w')
