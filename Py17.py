@@ -4,28 +4,32 @@ def powerball():
     numbers = set()
     while len(numbers) < 5:
         num = random.randint(1, 69)
-        numbers.add(num)
+        if num not in numbers:
+            numbers.add(num)
     return sorted(numbers)
 
 def mega_million():
     numbers = set()
     while len(numbers) < 5:
         num = random.randint(1, 70)
-        numbers.add(num)
+        if num not in numbers:
+            numbers.add(num)
     return sorted(numbers)
 
 def lucky_day_lotto():
     numbers = set()
     while len(numbers) < 5:
         num = random.randint(1, 45)
-        numbers.add(num)
+        if num not in numbers: 
+            numbers.add(num)
     return sorted(numbers)
 
 def lotto():
     numbers = set()
-    while len(numbers) < 5:
+    while len(numbers) < 6:
         num = random.randint(1, 52)
-        numbers.add(num)
+        if num not in numbers:
+            numbers.add(num)
     return sorted(numbers)
 
 def show_menu():
