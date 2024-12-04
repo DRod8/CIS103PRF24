@@ -42,21 +42,21 @@ font=("Arial Bold", 21))
  
 lbltext.place(x=3,y=3)
 winmain.configure(bg='light blue')
-winmain.title('P19')
+winmain.title('P18')
 
-txtboxlbl=Label(font=('Arial Bold',10),text='Temperature in Kelvin:',
+txtboxlbl=Label(font=('Arial Bold',10),text='Temp in Kelvin:',
                     fg='yellow',bg='dark blue')
 txtboxlbl.place(x=15,y=70)
 txtbox11=Entry(width=15,font=('Arial Bold',10))
 txtbox11.place(x=225,y=70)
 
-txtboxlbl2=Label(font=('Arial Bold',10),text='Temperature in Celsius:',
+txtboxlbl2=Label(font=('Arial Bold',10),text='Temp in Celsius:',
                     fg='yellow',bg='green')
 txtboxlbl2.place(x=15,y=100)
 txtbox2=Entry(width=15,font=('Arial Bold',10))
 txtbox2.place(x=225,y=100)
 
-txtboxlbl3=Label(font=('Arial Bold',10),text='Temperature in Fahrenheit:',
+txtboxlbl3=Label(font=('Arial Bold',10),text='Temp in Fahrenheit:',
                     fg='yellow',bg='red')
 txtboxlbl3.place(x=15,y=130)
 txtbox3=Entry(width=15,font=('Arial Bold',10))
@@ -69,7 +69,7 @@ btnclear = Button(font=("Arial Bold", 10),text="Clear",
     command=clear)
 btnclear.place(x=200,y=200)
 
-btncalc = Button(font=("Arial Bold", 10),text="Calculate",
+btncalc = Button(font=("Arial Bold", 10),text="Calc",
     command=validation)
 btncalc.place(x=100,y=200)
 
