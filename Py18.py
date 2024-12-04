@@ -36,32 +36,31 @@ def clear():
 def main():
     print('--> start <--')
 winmain = Tk()
-winmain.geometry('350x500')
-lbltext = Label( winmain,text="temperature conversion",
-font=("Arial Bold", 23))
+winmain.geometry('345x300')
+lbltext = Label( winmain,text="Temperature Conversion",
+font=("Arial Bold", 21))
  
 lbltext.place(x=3,y=3)
-winmain.configure(bg='purple')
-winmain.title('p19')
-txtboxlbl=Label(font=('Arial Bold',10),text='temperature in kelvin:',
-                    fg='yellow',bg='black')
+winmain.configure(bg='light blue')
+winmain.title('P19')
+
+txtboxlbl=Label(font=('Arial Bold',10),text='Temperature in Kelvin:',
+                    fg='yellow',bg='dark blue')
 txtboxlbl.place(x=15,y=70)
- 
 txtbox11=Entry(width=15,font=('Arial Bold',10))
-txtbox11.place(x=150,y=70)
-txtboxlbl2=Label(font=('Arial Bold',10),text='temperature in Celsius:',
-                    fg='yellow',bg='black')
+txtbox11.place(x=225,y=70)
+
+txtboxlbl2=Label(font=('Arial Bold',10),text='Temperature in Celsius:',
+                    fg='yellow',bg='green')
 txtboxlbl2.place(x=15,y=100)
-
 txtbox2=Entry(width=15,font=('Arial Bold',10))
-txtbox2.place(x=160,y=100)
+txtbox2.place(x=225,y=100)
 
-txtboxlbl3=Label(font=('Arial Bold',10),text='temperature in Fahrenheit:',
-                    fg='yellow',bg='black')
+txtboxlbl3=Label(font=('Arial Bold',10),text='Temperature in Fahrenheit:',
+                    fg='yellow',bg='red')
 txtboxlbl3.place(x=15,y=130)
-
 txtbox3=Entry(width=15,font=('Arial Bold',10))
-txtbox3.place(x=175,y=130)
+txtbox3.place(x=225,y=130)
 
 answer=Label(width=40,font=('Arial Bold',10))
 answer.place(x=10,y=160)
@@ -70,13 +69,13 @@ btnclear = Button(font=("Arial Bold", 10),text="Clear",
     command=clear)
 btnclear.place(x=200,y=200)
 
-btncalc = Button(font=("Arial Bold", 10),text="Calc",
+btncalc = Button(font=("Arial Bold", 10),text="Calculate",
     command=validation)
 btncalc.place(x=100,y=200)
 
 btnquit = Button(font=("Arial Bold", 10),
     text="QUIT", fg="red",command=quit)
-btnquit.place(x=150,y=450)
+btnquit.place(x=150,y=250)
 
 winmain.mainloop()
 main()
