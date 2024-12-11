@@ -1,67 +1,85 @@
+# Dan Rodriguez
+
 import random
 
-def clear_screen():
-    print("\n" * 20)
-
-def get_valid_integer(prompt, min_value=None, max_value=None):
-    while True:
-        try:
-            value = input(prompt).strip()
-            if value == "":
-                return None
-            value = int(value)
-            if (min_value is not None and value < min_value) or (max_value is not None and value > max_value):
-                raise ValueError(f"Please enter a number between {min_value} and {max_value}.")
-            return value
-        except ValueError as e:
-            print(f"Invalid input: {e}")
-
-def play_game(player_name):
-    clear_screen()
-    n = random.randint(1, 200)
-    default_chances = 15
-
-    chances = get_valid_integer("Enter the number of chances (1-100, press Enter for default 15): ", 1, 100)
-    if chances is None:
-        chances = default_chances
-
-    guesses_made = 0
-    error_guesses = 0
-    good_guesses = 0
-
-    while guesses_made < chances:
-        print(f"\nChances left: {chances - guesses_made}")
-        guess = get_valid_integer("Enter an integer from 1 to 200: ", 1, 200)
-
-        if guess is None:
-            error_guesses += 1
-            print("Invalid input. Please try again.")
-            continue
-
-        guesses_made += 1
-        good_guesses += 1
-
-        if guess < n:
-            print("Your guess is too low.")
-        elif guess > n:
-            print("Your guess is too high.")
-        else:
-            print(f"Congratulations {player_name}, you guessed it!")
-            break
-    else:
-        print(f"Sorry {player_name}, you've run out of chances. The number was {n}.")
-
-    print(f"\nGame Over! You made {good_guesses} valid guesses and {error_guesses} invalid attempts.")
-
 def main():
-    player_name = input("Enter your name: ").strip()
-    while True:
-        play_game(player_name)
-        play_again = input("\nDo you want to play again? (y/n): ").strip().lower()
-        if play_again != 'y':
-            break
+    ch = 1
+    while ch == 1:
+        name = input('Enter Your Name: ')
+
+
+        guesses = -1
+        while guesses == -1:
+            guesses = input('\nEnter Number of Chances: (Between 1-100 or Press ENTER for 15): ')
+
+
+            if guesses == '':
+                guesses = 15
+            elif guesses.isdigit():
+                guesses = int(guesses)
+
+                if guesses < 1 or guesses > 100:
+                    print('Number must be between 1-100!')
+                    guesses = -1
+            else:
+                print('Must be a Number!')
+                guesses = -1
+
+        n = random.randint(1, 200)
+        guesses_left = guesses
+        guesses_used = 0
+        error_guesses = 0
+
+        while guesses_left > 0:
+            print(f'Guesses Made: {guesses_used}, Guesses Left: {guesses_left}', end=' ')
+            guess = -1
+
+            while guess == -1:
+                guess = input('Guess the Number: ')
+
+                if guess.isdigit():
+                    guess = int(guess)
+                    if guess < 1 or guess > 200:
+                        print('Number must be between 1-200')
+                        guess = -1
+                        error_guesses += 1  
+                    elif guess < n:
+                        print('Number is too LOW!')
+                    elif guess > n:
+                        print('Number is too HIGH!')
+                    else:
+                        print(f'Congratulations, {name}! You WON {n}!')
+                        break  
+                else:
+                    print('Please enter a valid number.')
+                    error_guesses += 1
+
+            if guess == n:
+                break  
+
+            guesses_used += 1
+            guesses_left -= 1
+
+        if guesses_left == 0 and guess != n:
+            print(f'Sorry, {name}, You LOST! The correct number was {n}.')
+
+        print('Guesses Made: ', guesses_used + error_guesses)
+        print('Error Guesses: ', error_guesses)
+
+        while True:
+            play_again = input('Play Again? (Y/N): ').strip().lower()
+            if play_again == 'Y' or play_again=='y':
+                ch = 1
+                break
+            elif play_again == 'N' or play_again=='n':
+                print('Thank You,', name, 'See you Later!')
+                ch = 0
+                break
+            else:
+                print("Error: Please enter 'Y' or 'N'!")
+        
+        print('\n' * 5
+              )
 
 if __name__ == "__main__":
-    
-  
-  main()
+    main()
