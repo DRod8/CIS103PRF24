@@ -1,11 +1,12 @@
 #**Gross Pay**
 
 print('-Start-')
-answer='y'
+
 grosspay=0.0
 
 employee_name=(input('Employee Name: '))
-               
+
+answer='y'               
 while((answer=='y')or(answer=='Y')):
     print('---------')
     payrate =float(input('Enter Pay Rate: '))
@@ -22,8 +23,8 @@ print('-Done-')
 #**BOUNCE**
 
 print('-Start-')
-answer='y'
-               
+
+answer='y'               
 while((answer=='y')or(answer=='Y')):
     print('Bouncing Ball')
     bouncefactor=0.5
